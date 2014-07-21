@@ -11,14 +11,15 @@ using namespace std;
 
 int main() {
     int n = 0;
+    // Nth ugly number to be found
     cin >> n;
 
-    // Use greater for priority queue to act as a min-heap
+    // Use a set to act as a min-heap
     set<int> min_heap;
     min_heap.insert(1);
 
     for (int i = 1; i <= n; i++) {
-        // Following returns the element of the set as sets are ordered
+        // Following returns the min element as element of sets are ordered
         set<int>::iterator it = min_heap.begin();
         int ith_ugly = (*it);
         min_heap.erase(it);
